@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	# Existing files and folders
+	RewriteCond %{REQUEST_FILENAME} -f
+	RewriteRule ^.*$ - [L]
+
+	RewriteRule (images|styles|scripts|fonts)/(.+)$   www/$1/$2   [L]
+
+	RewriteRule ^.*$   index.php   [L]
+</IfModule>

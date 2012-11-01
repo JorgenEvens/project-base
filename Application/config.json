@@ -1,0 +1,50 @@
+{
+	"Application": {
+		"Loader": {
+			"name":		"Loader",
+			"location":	"Application/Loader.php",
+			"load": {
+				"WebLab_Loader_AddIn::init":	true,
+				"environment":					true,
+				"controlDispatcher":			true,
+				"shutdown":						true
+			},
+			
+			"includePaths": [
+				"Application"
+			]
+		},
+		
+		"Modules": {
+			"Aliasses": {
+				"":			"Index"
+			},
+			"Dispatcher": {
+				"Visit": {
+					"default":	"404",
+					"prefix": "Control"
+				}
+			}
+		},
+		
+		"Data": {
+			"DB": {
+				"EmptyStorage": {
+					"auto":			false,
+					"type":			"MySQLi",
+					"username":		"root",
+					"password":		"secret",
+					"host":			"localhost",
+					"database":		"EmptyDB",
+					"port":			"3306",
+					"prefix":		""
+				}
+			}
+		},
+		
+		"Templates": {
+			"directory":		"Application/Template",
+			"extract_vars": 	true
+		}
+	}
+}
